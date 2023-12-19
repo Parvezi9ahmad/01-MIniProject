@@ -1,0 +1,5 @@
+package in.ashokit.Repository;
+
+public interface UserAccountRepo {
+
+}

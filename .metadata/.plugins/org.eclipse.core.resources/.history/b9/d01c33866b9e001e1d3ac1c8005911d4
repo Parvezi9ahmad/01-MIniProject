@@ -1,0 +1,8 @@
+package in.ashokit.service;
+
+import in.ashokit.entities.UserAccount;
+
+public interface UserAccountService {
+
+	public String saveOrUpdateUserAcc(UserAccount userAcc);
+}

@@ -1,0 +1,17 @@
+package in.ashokit.entities;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
+@Entity
+public class UserAccount {
+	@Id
+	@GeneratedValue
+	private Integer userid;
+
+	private String fullName;
+	private String email;
+	private Long phno;
+	private String gender;
+}

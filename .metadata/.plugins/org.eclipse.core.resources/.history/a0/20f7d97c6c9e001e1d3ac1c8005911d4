@@ -1,0 +1,39 @@
+package in.ashokit.service;
+
+import java.util.List;
+
+import in.ashokit.entities.UserAccount;
+
+public class UserAccountServiceimpl implements UserAccountService {
+
+	@Override
+	public String saveOrUpdateUserAcc(UserAccount userAcc) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<UserAccount> getAllUserAccounts() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public UserAccount getUserAcc(Integer userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Boolean deletUserAcc(Integer userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Boolean updateUserAccStatus(Integer userId, String status) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,33 @@
+package in.ashokit.entities;
+
+import java.time.LocalDate;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
+@Entity
+public class UserAccount {
+	@Id
+	@GeneratedValue
+	private Integer userid;
+
+	private String fullName;
+	private String email;
+	private Long phno;
+	private String gender;
+	private LocalDate dob;
+	private Long ssn;
+	private String activeSw = "Y";
+
+	@CreationTimestamp
+	private LocalDate createdDate;
+
+	@UpdateTimestamp
+	private LocalDate updatedDate;
+	
+	
+}

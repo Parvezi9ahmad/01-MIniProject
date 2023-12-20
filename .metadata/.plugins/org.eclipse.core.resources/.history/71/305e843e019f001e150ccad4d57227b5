@@ -62,7 +62,7 @@
 							<td><a href="#" class="btn btn-danger">De-Activate</a></td>
 						</i>
 						<i th:case="N" class="fas fa-times orange-text">
-							<td><a href="#" class="btn btn-success">Activate</a></td>
+							<td><a href="#" class="btn btn-danger">Activate</a></td>
 						</i>
 
 					</span>

@@ -34,7 +34,7 @@
 		<h1>View Users</h1>
 		<table class="table table-bordered table-striped">
 			<thead>
-				<tr>
+				<th>
 					<th>ID</th>
 					<th>Name</th>
 					<th>Email</th>
@@ -42,33 +42,20 @@
 					<th>Gender</th>
 					<th>phno</th>
 					<th>Edit</th>
-					<th>Delete</th>
-					<th>Action</th>
+					
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="user: ${users}">
-					<td th:text="${user.userId}"></td>
-					<td th:text="${user.fullName}"></td>
-					<td th:text="${user.email}"></td>
-					<td th:text="${user.dob}"></td>
-					<td th:text="${user.gender}"></td>
-					<td th:text="${user.phno}"></td>
-					<td><a href="#" class="btn btn-primary">Edit</a></td>
-					<td><a href="#" class="btn btn-danger">Delete</a></td>
-
-					<span th:switch="${user.activeSw}">
-						<i th:case="Y" class="fas fa-check red-text">
-							<td><a href="#" class="btn btn-danger">De-Activate</a></td>
-						</i>
-						<i th:case="N" class="fas fa-times orange-text">
-							<td><a href="#" class="btn btn-success">Activate</a></td>
-						</i>
-
-					</span>
-
-
-				</tr>
+			<tr th:each="user: ${users}">
+			<td th:text="${user.userId}"></td>
+			<td th:text="${user.fullName}"></td>
+			<td th:text="${user.email}"></td>
+			<td th:text="${user.dob}"></td>
+			<td th:text="${user.gender}"></td>
+			<td th:text="${user.phno}"></td>
+			<td><a href="#"/>Edit</td>
+			
+			</tr>
 			</tbody>
 		</table>
 

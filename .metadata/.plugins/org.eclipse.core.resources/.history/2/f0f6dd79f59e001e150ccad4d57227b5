@@ -36,6 +36,6 @@ public class UserAccountController {
 	public String getUsers(Model model) {
 		List<UserAccount> usersList = service.getAllUserAccounts();
 		model.addAttribute("users", usersList);
-		return "view-users";
+		return null;
 	}
 }

@@ -1,7 +1,5 @@
 package in.ashokit.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,12 +28,6 @@ public class UserAccountController {
 		String msg = service.saveOrUpdateUserAcc(user);
 		model.addAttribute("msg", msg);
 		return "index";
-	}
-	
-	@GetMapping("/users")
-	public String getUsers(Model model) {
-		List<UserAccount> usersList = service.getAllUserAccounts();
-		model.addAttribute("users", usersList);
-		return "view-users";
+
 	}
 }

@@ -25,50 +25,31 @@
 					<li class="nav-item">
 						<a class="nav-link" href="#">Contact Us</a>
 					</li>
-					
+
 				</ul>
 			</div>
 		</div>
 	</nav>
 	<div class="container mt-5">
-		<h3>User Account Form</h3>
-		<p th:text="${msg}" class="text-success">
-		<form th:action="@{/save-user}" th:object"${user}" method="post">
-			<table>
+		<h1>View Users</h1>
+		<table>
+			<thead>
 				<tr>
-					<td> Fullname:</td>
-					<td><input type="text" th:field="*{user.fullName}" /></td>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Email</th>
+					<th>DOB</th>
+					<th>Gender</th>
+					<th>phno</th>
 				</tr>
-				<tr>
-					<td> Email:</td>
-					<td><input type="text" th:field="*{user.email}" /></td>
-				</tr>
-				<tr>
-					<td> PhoneNumber:</td>
-					<td><input type="number" th:field="*{user.phno}" /></td>
-				</tr>
-				<tr>
-					<td> ssn:</td>
-					<td><input type="number" th:field="*{user.ssn}" /></td>
-				</tr>
-				<tr>
-					<td> dob:</td>
-					<td><input type="date" th:field="*{user.dob}" /></td>
-				</tr>
-				<tr>
-					<td> gender:</td>
-					<td><input type="radio" th:field="*{user.gender}" value="M" />Male
-						<input type="radio" th:field="*{user.gender}" value="F" />Female
-					</td>
-				</tr>
-
-				<tr>
-					<td><input type="submit" value="Submit" class="btn btn-primary" /></td>
-					<td><input type="reset" value="Reset" class="btn btn-secondary" /></td>
-				</tr>
-			</table>
-
-
+			</thead>
+			<tbody>
+			<tr th:each="user: ${users}">
+			<td th:text="${user.userId}"></td>
+			
+			</tr>
+			</tbody>
+		</table>
 
 		</form>
 	</div>

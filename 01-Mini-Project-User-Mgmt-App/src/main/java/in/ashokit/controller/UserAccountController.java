@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import in.ashokit.entities.UserAccount;
 import in.ashokit.service.UserAccountService;
@@ -31,11 +32,32 @@ public class UserAccountController {
 		model.addAttribute("msg", msg);
 		return "index";
 	}
-	
+
 	@GetMapping("/users")
 	public String getUsers(Model model) {
 		List<UserAccount> usersList = service.getAllUserAccounts();
 		model.addAttribute("users", usersList);
 		return "view-users";
+	}
+
+	@GetMapping("/edit")
+	public String editUser(@RequestParam("id") Integer id, Model model) {
+		UserAccount userAcc = service.getUserAcc(id);
+		model.addAttribute("user", userAcc);
+		return "index";
+	}
+
+	@GetMapping("/delete")
+	public String deleteUser(@RequestParam("id") Integer uid) {
+		 service.deletUserAcc(uid);
+		return "redirect:/users";
+	}
+
+	@GetMapping("/update")
+	public String statusChange(@RequestParam("id") Integer uid,@RequestParam("status") String status) {
+		
+		 service.updateUserAccStatus(uid, status);
+		return "redirect:/users";
+
 	}
 }

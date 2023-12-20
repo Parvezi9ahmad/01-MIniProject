@@ -27,9 +27,9 @@ public class UserAccountController {
 
 	@PostMapping("/save-user")
 	public String handleSubmitBtn(@ModelAttribute("user") UserAccount user, Model model) {
-		System.out.println(user);
 		String msg = service.saveOrUpdateUserAcc(user);
 		model.addAttribute("msg", msg);
+		model.addAttribute("user", new UserAccount());
 		return "index";
 	}
 
@@ -48,16 +48,22 @@ public class UserAccountController {
 	}
 
 	@GetMapping("/delete")
-	public String deleteUser(@RequestParam("id") Integer uid) {
-		 service.deletUserAcc(uid);
-		return "redirect:/users";
+	public String deleteUser(@RequestParam("id") Integer uid, Model model) {
+		service.deletUserAcc(uid);
+		model.addAttribute("msg", "User record Deleted");
+		return "forward:/users";
 	}
 
 	@GetMapping("/update")
-	public String statusChange(@RequestParam("id") Integer uid,@RequestParam("status") String status) {
-		
-		 service.updateUserAccStatus(uid, status);
-		return "redirect:/users";
+	public String statusChange(@RequestParam("id") Integer uid, @RequestParam("status") String status, Model model) {
+
+		if ("Y".equals(status)) {
+			model.addAttribute("msg", "User Account Activated");
+		} else {
+			model.addAttribute("msg", "User Account De-Activated");
+		}
+		service.updateUserAccStatus(uid, status);
+		return "forward:/users";
 
 	}
 }

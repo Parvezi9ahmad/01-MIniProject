@@ -37,16 +37,17 @@
 			<table>
 				<tr>
 					<td> Fullname:</td>
-					<td><input type="text" th:field="*{user.fullName}" /></td>
+					<td><input type="text" th:field="*{user.fullName}" required/></td>
 					<input type="hidden" th:field="*{user.userId}"/>
+					<input type="hidden" th:field="*{user.activeSw}"/>
 				</tr>
 				<tr>
 					<td> Email:</td>
-					<td><input type="text" th:field="*{user.email}" /></td>
+					<td><input type="text" th:field="*{user.email}" required/></td>
 				</tr>
 				<tr>
 					<td> PhoneNumber:</td>
-					<td><input type="number" th:field="*{user.phno}" /></td>
+					<td><input type="number" th:field="*{user.phno}" required/></td>
 				</tr>
 				<tr>
 					<td> ssn:</td>

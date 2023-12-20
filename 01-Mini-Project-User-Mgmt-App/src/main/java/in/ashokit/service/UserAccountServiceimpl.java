@@ -19,7 +19,9 @@ public class UserAccountServiceimpl implements UserAccountService {
 	public String saveOrUpdateUserAcc(UserAccount userAcc) {
 		Integer userId = userAcc.getUserId();
 
-		// Insert / UPDATE
+		if(userId==null) {
+			userAcc.setActiveSw("Y");
+		}
 		userAccRepo.save(userAcc);
 
 		if (userId == null) {

@@ -12,7 +12,7 @@
 <body>
 	<div class="container mt-5">
 		<h3>User Account Form</h3>
-
+		<p th:text="${msg}" class="text-success">
 		<form th:action="@{/save-user}" th:object"${user}" method="post">
 			<table>
 				<tr>
@@ -37,12 +37,18 @@
 				</tr>
 				<tr>
 					<td> gender:</td>
-					<td><input type="radio" th:field="*{user.gender}" value="M"/>Male
-					<input type="radio" th:field="*{user.gender}" value="F"/>Female</td>
+					<td><input type="radio" th:field="*{user.gender}" value="M" />Male
+						<input type="radio" th:field="*{user.gender}" value="F" />Female
+					</td>
+				</tr>
+
+				<tr>
+					<td><input type="submit" value="Submit" class="btn btn-primary" /></td>
+					<td><input type="reset" value="Reset" class="btn btn-secondary" /></td>
 				</tr>
 			</table>
 
-			<input type="submit" value="Submit" class="btn btn-primary" />
+
 
 		</form>
 	</div>

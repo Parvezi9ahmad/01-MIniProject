@@ -25,8 +25,8 @@ public class UserAccountController {
 	@PostMapping("/save-user")
 	public String handleSubmitBtn(@ModelAttribute("user") UserAccount user, Model model) {
 		System.out.println(user);
-		
-		//ToDO:logic to save the data in DB
+		String msg = service.saveOrUpdateUserAcc(user);
+		model.addAttribute("msg", msg);
 		return "index";
 
 	}
